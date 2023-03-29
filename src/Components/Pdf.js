@@ -26,33 +26,36 @@ function PdfViewer() {
     setPageNumber((prevPageNumber) => prevPageNumber + 1);
   }
 
+  const options = {
+    disableAutoFetch: true,
+  };
+
   return (
-    <div>
-      <div>
-        <input type="file" onChange={onFileChange} />
-      </div>
-      <button onClick={goToPrevPage} disabled={pageNumber <= 1}>
-          Prev
-        </button>
-        <button onClick={goToNextPage} disabled={pageNumber >= numPages}>
-          Next
-        </button>
-      <div>
-        {file && (
-          <Document file={file} onLoadSuccess={onDocumentLoadSuccess} noData={true} cMapUrl={false} cMapPacked={false}>
-            <Page pageNumber={pageNumber} />
-          </Document>
-        )}
-      </div>
-      <div>
-        {file && (
-          <p>
-            Page {pageNumber} of {numPages}
-          </p>
-        )}
-        
-      </div>
-    </div>
+	<div>
+		<div>
+			<input type="file" onChange={onFileChange} />
+		</div>
+		<button onClick={goToPrevPage} disabled={pageNumber <= 1}>
+			Prev
+		</button>
+		<button onClick={goToNextPage} disabled={pageNumber >= numPages}>
+			Next
+		</button>
+		<div>
+			{file && (
+			<p>
+				Page {pageNumber} of {numPages}
+			</p>
+			)}
+		</div>
+		<div>
+			{file && (
+				<Document file={file} onLoadSuccess={onDocumentLoadSuccess}>
+					<Page pageNumber={pageNumber} />
+				</Document>
+			)}
+		</div>      
+	</div>
   );
 }
 
