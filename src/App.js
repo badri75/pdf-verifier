@@ -1,7 +1,8 @@
 import './App.css';
 import Pdf from './Components/Pdf';
-import pd from './test.pdf';
-import NewPdf from './Components/NewPdf';
+import Form from './Components/Form';
+// import pd from './test.pdf';
+// import NewPdf from './Components/NewPdf';
 import 'bootstrap/dist/css/bootstrap.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -19,6 +20,7 @@ function App() {
 				</Col>
 				<Col>
 					<h2>Form</h2>
+					<Form/>
 				</Col>
 			</Row>
 		</Container>

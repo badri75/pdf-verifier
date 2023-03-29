@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
+import { Highlight, AreaHighlight, Popup } from 'react-pdf-highlighter';
+import ContentEditable from 'react-contenteditable';
+import 'bootstrap/dist/css/bootstrap.css';
+import Container from 'react-bootstrap/Container';
 // import "react-pdf/dist/Page/AnnotationLayer.css";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
